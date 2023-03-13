@@ -5,8 +5,11 @@ const autoprefixer = require("gulp-autoprefixer");
 const uglify = require("gulp-uglify");
 const imagemin = require("gulp-imagemin");
 const del = require("del");
-const svgSprite = require("gulp-svg-sprite");
 const browserSync = require("browser-sync").create();
+
+/*ADD: new plugins*/
+const svgSprite = require("gulp-svg-sprite");
+const ttf2woff2 = require("gulp-ttf2woff2"); /*57.4k (gzipped: 18k)*/
 
 function browsersync() {
   browserSync.init({
@@ -17,18 +20,23 @@ function browsersync() {
   });
 }
 
+/*FIX: dont minify*/
 function styles() {
-  return src("app/scss/style.scss")
-    .pipe(scss({ outputStyle: "compressed" }))
-    .pipe(concat("style.min.css"))
-    .pipe(
-      autoprefixer({
-        overrideBrowserslist: ["last 10 versions"],
-        grid: true,
-      })
-    )
-    .pipe(dest("app/css"))
-    .pipe(browserSync.stream());
+  return (
+    src("app/scss/style.scss")
+      .pipe(scss())
+      .pipe(concat("style.css"))
+      // .pipe(scss({ outputStyle: "compressed" }))
+      // .pipe(concat("style.min.css"))
+      .pipe(
+        autoprefixer({
+          overrideBrowserslist: ["last 10 versions"],
+          grid: true,
+        })
+      )
+      .pipe(dest("app/css"))
+      .pipe(browserSync.stream())
+  );
 }
 
 function scripts() {
@@ -57,9 +65,9 @@ function images() {
     )
     .pipe(dest("dist/images"));
 }
-
+/* ADD: create sprites*/
 function svgSprites() {
-  return src("app/images/icons/*.svg")
+  return src("app/images/sprite-icons/*.svg")
     .pipe(
       svgSprite({
         mode: {
@@ -70,6 +78,11 @@ function svgSprites() {
       })
     )
     .pipe(dest("app/images"));
+}
+
+/*ADD: convert fonts */
+function convertFonts() {
+  return src("app/fonts/*.ttf").pipe(tt2woff2()).pipe(dest("app/fonts"));
 }
 
 function build() {
@@ -86,7 +99,7 @@ function watching() {
   watch(["app/scss/**/*.scss"], styles);
   watch(["app/js/**/*.js", "!app/js/main.min.js"], scripts);
   watch(["app/**/*.html"]).on("change", browserSync.reload);
-  watch(["app/images/icons/*.svg"], svgSprites);
+  watch(["app/images/sprite-icons/*.svg"], svgSprites);
 }
 
 exports.styles = styles;
@@ -96,6 +109,8 @@ exports.watching = watching;
 exports.images = images;
 exports.cleanDist = cleanDist;
 exports.svgSprites = svgSprites;
+exports.convertFonts = convertFonts;
+
 exports.build = series(cleanDist, images, build);
 
 exports.default = parallel(svgSprites, styles, scripts, browsersync, watching);

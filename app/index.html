@@ -1,434 +1,513 @@
 <!DOCTYPE html>
 <html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Food / Головна сторінка</title>
+    <link rel="icon" href="favicon/favicon.svg" type="svg/xml" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="stylesheet" href="css/style2.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.min.css">
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-  <link rel="manifest" href="favicon/site.webmanifest">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
-  <title>Simple Food</title>
-</head>
-
-<body>
-  <header class="header">
-    <div class="container">
-      <nav class="header__nav">
-        <a class="logo" href="#">
-          <img class="logo__img" src="images/logo.svg" alt="Логотип">
-        </a>
-        <ul class="menu">
-          <li class="menu__item">
-            <a class="menu__link menu__link--active" href="#">Головна</a>
-          </li>
-          <li class="menu__item">
-            <a class="menu__link" href="#">Страви</a>
-          </li>
-          <li class="menu__item">
-            <a class="menu__link" href="#">Контакти</a>
-          </li>
-          <button class="user-nav__btn user-nav--search icon-btn" type="button"></button>
-          <button class="user-nav__btn user-nav--cart icon-btn" type="button">
-            <span class="user-nav__num">4</span>
-          </button>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <main class="main">
-    <section class="section hero">
-      <div class="container">
-        <div class="hero__inner">
-          <div class="hero__content">
-            <p class="hero__title">
-              Доставка <br>
-              <span class="hero__title-span">за 15 ХВИЛИН</span>
-            </p>
-            <div class="hero__text">
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="container">
+          <nav class="header__nav">
+            <a class="logo" href="#">
+              <img
+                class="logo__img"
+                src="images/logo.svg"
+                width="200"
+                height="39"
+                alt="Логотип SimpleFood"
+              />
+            </a>
+            <ul class="menu">
+              <li class="menu__item">
+                <a class="menu__link menu__link--current" href="#">Головна</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Страви</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Контакти</a>
+              </li>
+            </ul>
+            <div class="header__actions">
+              <button class="btn__sm icon icon--search">
+                <span class="sr-only">Шукати товари</span>
+              </button>
+              <button class="btn__sm icon icon--cart">
+                <span class="sr-only"
+                  >Переглянути кошик. Кількість товарів в кошику.</span>
+                <span class="btn-counter">4</span>
+              </button>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <main class="page">
+        <h1 class="sr-only">
+          Сервіс доставки SimpleFood - номер один у місті Київ
+        </h1>
+        <section
+          class="hero"
+          style="background-image: url('images/hero_bg.png')"
+        >
+          <h2 class="sr-only">Особливості сервісу доставки SimpleFood</h2>
+          <div class="container">
+            <div class="hero__title">
+              Доставка <span class="text-orange">за 15 хвилин</span>
+            </div>
+            <div class="hero__descriptions">
               <p>
-                Найшвидший сервіс доставки їжі у вашому місті. Якщо запізнемось - то доставка за наш рахунок
+                Найшвидший сервіс доставки їжі у вашому місті. Якщо запізнемось
+                - то доставка за наш рахунок
               </p>
             </div>
-            <div class="hero__btns">
-              <button class="hero__btn" type="button">Замовити</button>
-              <a class="hero__more" href="#">Детальніше</a>
+            <div class="hero__actions">
+              <a class="btn" href="">Замовити</a>
+              <a class="td-link" href="">Детальніше</a>
             </div>
           </div>
-          <img class="hero__img" src="images/hero_bg.png" alt="доставка піци" aria-hidden="true">
-        </div>
-      </div>
-    </section>
-    <section class="section category">
-      <div class="container">
-        <h2 class="title">Популярне в категоріях</h2>
-        <ul class="category-nav">
-          <li class="category-nav__item">
-            <button class="category__btn category__btn--burgers" data-filter=".category-a">Бургери</button>
-          </li>
-          <li class="category-nav__item">
-            <button class="category__btn category__btn--pizza" data-filter=".category-b">Піца</button>
-          </li>
-          <li class="category-nav__item">
-            <button class="category__btn category__btn--sandvich" data-filter=".category-c">Сендвічі</button>
-          </li>
-          <li class="category-nav__item">
-            <button class="category__btn category__btn--asia" data-filter=".category-d">Азійська кухня</button>
-          </li>
-          <li class="category-nav__item">
-            <button class="category__btn category__btn--sets" data-filter=".category-e">Cети</button>
-          </li>
-        </ul>
-        <div class="category__cards">
-          <ul class="category-list mix category-a">
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-1.png" alt="зображення бургера">
-              <p class="category__card-name">Чізбургер з листям салату</p>
-              <span class="category__card-price">160 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-2.png" alt="зображення бургера">
-              <p class="category__card-name">Біфбургер</p>
-              <span class="category__card-price">190 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-3.png" alt="зображення бургера">
-              <p class="category__card-name">Королівський чізбургер</p>
-              <span class="category__card-price">260 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-4.png" alt="зображення бургера">
-              <p class="category__card-name">Чорний гамбургер</p>
-              <span class="category__card-price">199 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-5.png" alt="зображення бургера">
-              <p class="category__card-name">Чікен бургер</p>
-              <span class="category__card-price">180 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-1.png" alt="зображення бургера">
-              <p class="category__card-name">Чізбургер з листям салату</p>
-              <span class="category__card-price">160 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-2.png" alt="зображення бургера">
-              <p class="category__card-name">Біфбургер</p>
-              <span class="category__card-price">190 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-3.png" alt="зображення бургера">
-              <p class="category__card-name">Королівський чізбургер</p>
-              <span class="category__card-price">260 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-4.png" alt="зображення бургера">
-              <p class="category__card-name">Чорний гамбургер</p>
-              <span class="category__card-price">199 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-5.png" alt="зображення бургера">
-              <p class="category__card-name">Чікен бургер</p>
-              <span class="category__card-price">180 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-          </ul>
-          <ul class="category-list mix category-b">
-           <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-1.png" alt="зображення бургера">
-              <p class="category__card-name">Чізбургер з листям салату</p>
-              <span class="category__card-price">160 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-2.png" alt="зображення бургера">
-              <p class="category__card-name">Біфбургер</p>
-              <span class="category__card-price">190 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-3.png" alt="зображення бургера">
-              <p class="category__card-name">Королівський чізбургер</p>
-              <span class="category__card-price">260 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-4.png" alt="зображення бургера">
-              <p class="category__card-name">Чорний гамбургер</p>
-              <span class="category__card-price">199 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-5.png" alt="зображення бургера">
-              <p class="category__card-name">Чікен бургер</p>
-              <span class="category__card-price">180 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-1.png" alt="зображення бургера">
-              <p class="category__card-name">Чізбургер з листям салату</p>
-              <span class="category__card-price">160 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-2.png" alt="зображення бургера">
-              <p class="category__card-name">Біфбургер</p>
-              <span class="category__card-price">190 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-3.png" alt="зображення бургера">
-              <p class="category__card-name">Королівський чізбургер</p>
-              <span class="category__card-price">260 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-4.png" alt="зображення бургера">
-              <p class="category__card-name">Чорний гамбургер</p>
-              <span class="category__card-price">199 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-5.png" alt="зображення бургера">
-              <p class="category__card-name">Чікен бургер</p>
-              <span class="category__card-price">180 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-          </ul>
-          <ul class="category-list mix category-c">
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-1.png" alt="зображення бургера">
-              <p class="category__card-name">Чізбургер з листям салату</p>
-              <span class="category__card-price">160 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-2.png" alt="зображення бургера">
-              <p class="category__card-name">Біфбургер</p>
-              <span class="category__card-price">190 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-3.png" alt="зображення бургера">
-              <p class="category__card-name">Королівський чізбургер</p>
-              <span class="category__card-price">260 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-4.png" alt="зображення бургера">
-              <p class="category__card-name">Чорний гамбургер</p>
-              <span class="category__card-price">199 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-5.png" alt="зображення бургера">
-              <p class="category__card-name">Чікен бургер</p>
-              <span class="category__card-price">180 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-1.png" alt="зображення бургера">
-              <p class="category__card-name">Чізбургер з листям салату</p>
-              <span class="category__card-price">160 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-2.png" alt="зображення бургера">
-              <p class="category__card-name">Біфбургер</p>
-              <span class="category__card-price">190 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-3.png" alt="зображення бургера">
-              <p class="category__card-name">Королівський чізбургер</p>
-              <span class="category__card-price">260 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-4.png" alt="зображення бургера">
-              <p class="category__card-name">Чорний гамбургер</p>
-              <span class="category__card-price">199 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-5.png" alt="зображення бургера">
-              <p class="category__card-name">Чікен бургер</p>
-              <span class="category__card-price">180 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-          </ul>
-          <ul class="category-list mix category-e">
-             <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-1.png" alt="зображення бургера">
-              <p class="category__card-name">Чізбургер з листям салату</p>
-              <span class="category__card-price">160 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-2.png" alt="зображення бургера">
-              <p class="category__card-name">Біфбургер</p>
-              <span class="category__card-price">190 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-3.png" alt="зображення бургера">
-              <p class="category__card-name">Королівський чізбургер</p>
-              <span class="category__card-price">260 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-4.png" alt="зображення бургера">
-              <p class="category__card-name">Чорний гамбургер</p>
-              <span class="category__card-price">199 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-5.png" alt="зображення бургера">
-              <p class="category__card-name">Чікен бургер</p>
-              <span class="category__card-price">180 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-1.png" alt="зображення бургера">
-              <p class="category__card-name">Чізбургер з листям салату</p>
-              <span class="category__card-price">160 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-2.png" alt="зображення бургера">
-              <p class="category__card-name">Біфбургер</p>
-              <span class="category__card-price">190 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-3.png" alt="зображення бургера">
-              <p class="category__card-name">Королівський чізбургер</p>
-              <span class="category__card-price">260 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-4.png" alt="зображення бургера">
-              <p class="category__card-name">Чорний гамбургер</p>
-              <span class="category__card-price">199 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-            <li class="category__card burger__card">
-              <img class="category__card-img" src="images/category/burgers/burger-card-5.png" alt="зображення бургера">
-              <p class="category__card-name">Чікен бургер</p>
-              <span class="category__card-price">180 грн.</span>
-              <button class="category__card-btn btn">До кошика</button>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__top">
-        <form class="footer-form" action="#">
-          <a class="logo footer-logo" href="#">
-            <img class="logo__img" src="images/logo.svg" alt="Логотип">
-          </a>
-          <label class="footer-form__label" for="email">
-            <span class="sr-only">Введіть ваш eMail</span>
-          </label>
-          <input class="footer-form__input" type="email" name="email" placeholder="Ваш email" id="email" required>
-          <button class="btn footer-form__btn btn--with-icon">Підписатися</button>
-        </form>
-        <div class="footer-menu">
-          <ul class="footer-menu__list">
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">Як це працює</a>
-            </li>
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">Продукти</a>
-            </li>
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">Страви</a>
-            </li>
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">Меню</a>
-            </li>
-          </ul>
-          <ul class="footer-menu__list">
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">Про нас</a>
-            </li>
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">Новини</a>
-            </li>
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">Партнери</a>
-            </li>
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">ЧаПи</a>
-            </li>
-          </ul>
-          <ul class="footer-menu__list">
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">Застосунок</a>
-            </li>
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">Блог</a>
-            </li>
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">Що нового?</a>
-            </li>
-            <li class="footer-menu__item">
-              <a class="footer-menu__link" href="#">Мапа сайту</a>
-            </li>
-          </ul>
-        </div>
-        <div class="footer-menu__address">
-          <ul class="footer-menu__data">
-            <li class="footer-menu__location">вул. Т.Г.Шевченка, 1</li>
-            <li class="footer-menu__phone">
-              <a class="footer-menu__phone-link" href="tel:380501112233">380501112233</a>
-            </li>
-            <li class="footer-menu__mail">
-              <a class="footer-menu__mail-link" href="mailto:support@sfood.com">support@sfood.com</a>
-            </li>
-          </ul>
-          <ul class="footer-menu__social">
-            <li class="footer-social__item">
-              <a class="footer-social__link footer-social__link--facebook" href="#">
-                <span class="sr-only">Наш фейсбук</span>
+        </section>
+        <section class="popular">
+          <div class="container">
+            <h2 class="title">Популярне в категоріях</h2>
+            <ul class="category-nav popular-nav">
+              <li class="category-nav__item">
+                <button
+                  class="category-nav__btn icon icon--burger"
+                  type="button"
+                  data-filter=".category-a"
+                >
+                  Бургери
+                </button>
+              </li>
+              <li class="category-nav__item">
+                <button
+                  class="category-nav__btn icon icon--pizza"
+                  type="button"
+                  data-filter=".category-b"
+                >
+                  Піца
+                </button>
+              </li>
+              <li class="category-nav__item">
+                <button
+                  class="category-nav__btn icon icon--sandvich"
+                  type="button"
+                  data-filter=".category-c"
+                >
+                  Сендвічі
+                </button>
+              </li>
+              <li class="category-nav__item">
+                <button
+                  class="category-nav__btn icon icon--asian"
+                  type="button"
+                  data-filter=".category-d"
+                >
+                  Азійська кухня
+                </button>
+              </li>
+              <li class="category-nav__item">
+                <button
+                  class="category-nav__btn icon icon--sets"
+                  type="button"
+                  data-filter=".category-e"
+                >
+                  Cети
+                </button>
+              </li>
+            </ul>
+            <ul class="category-list mix category-a">
+              <li class="category__list__item">
+                <article class="product-card">
+                  <a href="" class="product-card__link">
+                    <h3 class="product-card__title">
+                      Чізбургер з листям салату
+                    </h3>
+                  </a>
+                  <a href="" class="product-card__link">
+                    <img
+                      class="category-card__img"
+                      src="images/category/burgers/burger-card-1.jpg"
+                      width="140"
+                      height="140"
+                      alt="зображення чізбургера з листям салату"
+                    />
+                  </a>
+                  <div class="product-card__price">
+                    160 <span class="product-card__currency">грн.</span>
+                  </div>
+                  <button class="btn btn--md product-card__btn">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="category__list__item">
+                <article class="product-card">
+                  <a href="" class="product-card__link">
+                    <h3 class="product-card__title">Біфбургер</h3>
+                  </a>
+                  <a href="" class="product-card__link">
+                    <img
+                      class="category-card__img"
+                      src="images/category/burgers/burger-card-2.jpg"
+                      width="140"
+                      height="140"
+                      alt="зображення біфбургера"
+                    />
+                  </a>
+                  <div class="product-card__price">
+                    190 <span class="product-card__currency">грн.</span>
+                  </div>
+                  <button class="btn btn--md product-card__btn">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="category__list__item">
+                <article class="product-card">
+                  <a href="" class="product-card__link">
+                    <h3 class="product-card__title">Королівський чізбургер</h3>
+                  </a>
+                  <a href="" class="product-card__link">
+                    <img
+                      class="category-card__img"
+                      src="images/category/burgers/burger-card-3.jpg"
+                      width="140"
+                      height="140"
+                      alt="зображення королівського чізбургера"
+                    />
+                  </a>
+                  <div class="product-card__price">
+                    260 <span class="product-card__currency">грн.</span>
+                  </div>
+                  <button class="btn btn--md product-card__btn">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="category__list__item">
+                <article class="product-card">
+                  <a href="" class="product-card__link">
+                    <h3 class="product-card__title">Чорний гамбургер</h3>
+                  </a>
+                  <a href="" class="product-card__link">
+                    <img
+                      class="category-card__img"
+                      src="images/category/burgers/burger-card-4.jpg"
+                      width="140"
+                      height="140"
+                      alt="зображення чорного гамбургера"
+                    />
+                  </a>
+                  <div class="product-card__price">
+                    199 <span class="product-card__currency">грн.</span>
+                  </div>
+                  <button class="btn btn--md product-card__btn">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="category__list__item">
+                <article class="product-card">
+                  <a href="" class="product-card__link">
+                    <h3 class="product-card__title">Чікен бургер</h3>
+                  </a>
+                  <a href="" class="product-card__link">
+                    <img
+                      class="category-card__img"
+                      src="images/category/burgers/burger-card-5.jpg"
+                      width="140"
+                      height="140"
+                      alt="зображення чікен бургера"
+                    />
+                  </a>
+                  <div class="product-card__price">
+                    180 <span class="product-card__currency">грн.</span>
+                  </div>
+                  <button class="btn btn--md product-card__btn">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="category__list__item">
+                <article class="product-card">
+                  <a href="" class="product-card__link">
+                    <h3 class="product-card__title">
+                      Чізбургер з листям салату
+                    </h3>
+                  </a>
+                  <a href="" class="product-card__link">
+                    <img
+                      class="category-card__img"
+                      src="images/category/burgers/burger-card-1.jpg"
+                      width="140"
+                      height="140"
+                      alt="зображення чізбургера з листям салату"
+                    />
+                  </a>
+                  <div class="product-card__price">
+                    160 <span class="product-card__currency">грн.</span>
+                  </div>
+                  <button class="btn btn--md product-card__btn">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="category__list__item">
+                <article class="product-card">
+                  <a href="" class="product-card__link">
+                    <h3 class="product-card__title">Біфбургер</h3>
+                  </a>
+                  <a href="" class="product-card__link">
+                    <img
+                      class="category-card__img"
+                      src="images/category/burgers/burger-card-2.jpg"
+                      width="140"
+                      height="140"
+                      alt="зображення біфбургера"
+                    />
+                  </a>
+                  <div class="product-card__price">
+                    190 <span class="product-card__currency">грн.</span>
+                  </div>
+                  <button class="btn btn--md product-card__btn">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="category__list__item">
+                <article class="product-card">
+                  <a href="" class="product-card__link">
+                    <h3 class="product-card__title">Королівський чізбургер</h3>
+                  </a>
+                  <a href="" class="product-card__link">
+                    <img
+                      class="category-card__img"
+                      src="images/category/burgers/burger-card-3.jpg"
+                      width="140"
+                      height="140"
+                      alt="зображення королівського чізбургера"
+                    />
+                  </a>
+                  <div class="product-card__price">
+                    260 <span class="product-card__currency">грн.</span>
+                  </div>
+                  <button class="btn btn--md product-card__btn">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="category__list__item">
+                <article class="product-card">
+                  <a href="" class="product-card__link">
+                    <h3 class="product-card__title">Чорний гамбургер</h3>
+                  </a>
+                  <a href="" class="product-card__link">
+                    <img
+                      class="category-card__img"
+                      src="images/category/burgers/burger-card-4.jpg"
+                      width="140"
+                      height="140"
+                      alt="зображення чорного гамбургера"
+                    />
+                  </a>
+                  <div class="product-card__price">
+                    199 <span class="product-card__currency">грн.</span>
+                  </div>
+                  <button class="btn btn--md product-card__btn">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="category__list__item">
+                <article class="product-card">
+                  <a href="" class="product-card__link">
+                    <h3 class="product-card__title">Чікен бургер</h3>
+                  </a>
+                  <a href="" class="product-card__link">
+                    <img
+                      class="category-card__img"
+                      src="images/category/burgers/burger-card-5.jpg"
+                      width="140"
+                      height="140"
+                      alt="зображення чікен бургера"
+                    />
+                  </a>
+                  <div class="product-card__price">
+                    180 <span class="product-card__currency">грн.</span>
+                  </div>
+                  <button class="btn btn--md product-card__btn">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+            </ul>
+            <button class="td-link popular__btn">Показати ще</button>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <div class="container">
+          <section class="footer__content">
+            <h2 class="sr-only">Додаткова інформація</h2>
+            <div class="footer__subscription">
+              <h3 class="sr-only">Інформація про підписку</h3>
+              <a class="logo footer__logo" href="#">
+                <img
+                  class="logo__img"
+                  src="images/logo.svg"
+                  width="200"
+                  height="39"
+                  alt="Логотип SimpleFood"
+                />
               </a>
-            </li>
-            <li class="footer-social__item">
-              <a class="footer-social__link footer-social__link--twitter" href="#">
-                <span class="sr-only">Наш твіттер</span>
-              </a>
-            </li>
-            <li class="footer-social__item">
-              <a class="footer-social__link footer-social__link--instagram" href="#">
-                <span class="sr-only">Наш інстаграм</span>
-              </a>
-            </li>
-          </ul>
+              <div class="subscription">
+                <form class="form">
+                  <label class="sr-only" for="subscription">
+                    Ваш email підписки
+                  </label>
+                  <input
+                    class="form__field"
+                    type="email"
+                    name="subscription"
+                    placeholder="Ваш email"
+                    id="subscription"
+                    required
+                  />
+                  <button class="btn icon icon--send subscription__btn">
+                    Підписатися
+                  </button>
+                </form>
+              </div>
+            </div>
+            <div class="footer__nav">
+              <h3 class="sr-only">Навігація по сайту</h3>
+              <ul class="menu footer__menu">
+                <li class="menu__item">
+                  <a class="menu__link" href="#">Як це працює</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="#">Продукти</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="#">Страви</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="#">Меню</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="#">Про нас</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="#">Новини</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="#">Партнери</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="#">ЧаПи</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="#">Застосунок</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="#">Блог</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="#">Що нового?</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="#">Мапа сайту</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__contacts">
+              <h3 class="sr-only">Контактна інформація, соцмережі.</h3>
+              <adress class="contacts">
+                <ul class="contacts__list">
+                  <li class="contacts__item">
+                    <a class="contacts__link icon icon--adress" href=""
+                      >вул. Т.Г.Шевченка, 1</a
+                    >
+                  </li>
+                  <li class="contacts__item">
+                    <a
+                      class="contacts__link icon icon--phone"
+                      href="tel:380501112233"
+                      >380501112233</a
+                    >
+                  </li>
+                  <li class="contacts__item">
+                    <a
+                      class="contacts__link icon icon--link"
+                      href="mailto:support@sfood.com"
+                      >support@sfood.com</a
+                    >
+                  </li>
+                </ul>
+                <ul class="social">
+                  <li class="social__item">
+                    <a class="social__link" href="#">
+                      <span class="sr-only">Наш фейсбук</span>
+                      <span
+                        class="social__icon"
+                        style="-webkit-mask-image: url(); mask-image: url()"
+                      ></span>
+                    </a>
+                  </li>
+                  <li class="social__item">
+                    <a class="social__link" href="#">
+                      <span class="sr-only">Наш твіттер</span>
+                      <span
+                        class="social__icon"
+                        style="-webkit-mask-image: url(); mask-image: url()"
+                      ></span>
+                    </a>
+                  </li>
+                  <li class="social__item">
+                    <a class="social__link" href="#">
+                      <span class="sr-only">Наш інстаграм</span>
+                      <span
+                        class="social__icon"
+                        style="-webkit-mask-image: url(); mask-image: url()"
+                      ></span>
+                    </a>
+                  </li>
+                </ul>
+              </adress>
+            </div>
+          </section>
         </div>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <p class="copy">© 2023 Simple Food</p>
-    </div>
-  </footer>
+        <div class="footer__bottom">&copy; 2023 Simple Food</div>
+      </footer>
 
-  <script src="js/main.min.js"></script>
-</body>
-
+      <script src="js/main.min.js"></script>
+    </div>
+  </body>
 </html>
