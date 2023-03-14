@@ -1,4 +1,4 @@
-html {
+:root {
   box-sizing: border-box;
 }
 
@@ -8,18 +8,16 @@ html {
   box-sizing: inherit;
 }
 
-ul,
-ol {
-  padding: 0;
+h1,
+h2,
+h3 {
+  font-weight: normal;
 }
 
 body,
 h1,
 h2,
 h3,
-h4,
-h5,
-h6,
 p,
 ul,
 ol,
@@ -32,44 +30,46 @@ dd {
   margin: 0;
 }
 
+ul,
+ol {
+  padding: 0;
+  list-style-type: none;
+}
+
 ul {
   list-style: none;
 }
 
-img {
-  max-width: 100%;
+label {
   display: block;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
 
 input,
 button,
 textarea,
 select {
+  appearance: none;
+  outline: 0;
+  border: 0;
   font: inherit;
+  padding: 0;
 }
 
 button {
-  padding: 0;
+  cursor: pointer;
   background-color: transparent;
 }
 
 a {
+  text-decoration: none;
   color: inherit;
-  display: inline-block;
 }
 
-input,
-textarea,
-button {
-  font: inherit;
-  color: inherit;
-  outline: 0;
-  border: 0;
-  appearance: 0;
-  cursor: pointer;
-}
-
-body {
-  min-height: 100vh;
+address {
+  font-style: normal;
 }

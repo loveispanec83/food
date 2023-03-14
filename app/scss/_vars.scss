@@ -1,25 +1,4 @@
-$accent:   rgba(255, 104, 56, 1);              //#ff6838 orange
-$default:  rgba(49, 53, 43, 1);                //#31352b;
-$title:    rgba(54, 56, 83, 1);                 //#363853;
-
-$accent-focus: rgba(255, 104, 56, 0.1);
-
-%outline {
-  outline: 2px solid rgba(255, 104, 56, 0.7);
-} 
-
-
-%rubik-300 {
-  font-family: 'Rubik-Light', sans-serif;
-  font-weight: 300;
-}
-
-%rubik-400 {
-  font-family: 'Rubik-Regular', sans-serif;
-  font-weight: 400;
-}
-
-%rubik-500 {
-  font-family: 'Rubik-Medium', sans-serif;
-  font-weight: 500;
-}
+$lg: 1200;
+$md: 992;
+$sm: 768;
+$xs: 576;
