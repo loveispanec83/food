@@ -55,10 +55,10 @@
               </li>
             </ul>
             <div class="header__actions">
-              <button class="btn-sm icon icon--search">
+              <button class="btn-sm icon icon--search" type="button">
                 <span class="sr-only">Шукати товари</span>
               </button>
-              <button class="btn-sm header__btn icon icon--cart">
+              <button class="btn-sm header__btn icon icon--cart" type="button">
                 <span class="sr-only"
                   >Переглянути кошик. Кількість товарів в кошику.</span>
                 <span class="btn-counter">4</span>
@@ -72,7 +72,7 @@
           Сервіс доставки SimpleFood - номер один у місті Київ
         </h1>
         <section
-          class="hero"
+          class="hero mb-120"
           style="background-image: url('images/hero_bg.png')"
         >
           <h2 class="sr-only">Особливості сервісу доставки SimpleFood</h2>
@@ -92,58 +92,48 @@
             </div>
           </div>
         </section>
-        <section class="popular">
+        <section class="popular mb-120" >
           <div class="container">
             <h2 class="title">Популярне в категоріях</h2>
-            <ul class="category-nav popular-nav">
-              <li class="category-nav__item">
+            <ul class="categories-nav popular__nav">
+              <li class="categories-nav__item">
                 <button
-                  class="category-nav__btn icon icon--burger"
-                  type="button"
-                  data-filter=".category-a"
-                >
+                  class="categories-nav__btn icon icon--burger"
+                  data-filter="category-1" type="button">
                   Бургери
                 </button>
               </li>
-              <li class="category-nav__item">
+              <li class="categories-nav__item">
                 <button
-                  class="category-nav__btn icon icon--pizza"
-                  type="button"
-                  data-filter=".category-b"
-                >
+                  class="categories-nav__btn icon icon--pizza"
+                  data-filter="category-2" type="button">
                   Піца
                 </button>
               </li>
-              <li class="category-nav__item">
+              <li class="categories-nav__item">
                 <button
-                  class="category-nav__btn icon icon--sandvich"
-                  type="button"
-                  data-filter=".category-c"
-                >
+                  class="categories-nav__btn icon icon--sandvich"
+                  data-filter="category-3" type="button">
                   Сендвічі
                 </button>
               </li>
-              <li class="category-nav__item">
+              <li class="categories-nav__item">
                 <button
-                  class="category-nav__btn icon icon--asian"
-                  type="button"
-                  data-filter=".category-d"
-                >
+                  class="categories-nav__btn icon icon--asian"
+                  data-filter="category-4"  type="button">
                   Азійська кухня
                 </button>
               </li>
-              <li class="category-nav__item">
+              <li class="categories-nav__item">
                 <button
-                  class="category-nav__btn icon icon--sets"
-                  type="button"
-                  data-filter=".category-e"
-                >
+                  class="categories-nav__btn icon icon--sets"
+                  data-filter="category-5" type="button">
                   Cети
                 </button>
               </li>
             </ul>
-            <ul class="category-list mix category-a">
-              <li class="category__list__item">
+            <ul class="categories-list popular__list">
+              <!-- <li class="categories-list__item category-1">
                 <article class="product-card">
                   <a href="" class="product-card__link">
                     <h3 class="product-card__title">
@@ -152,7 +142,7 @@
                   </a>
                   <a href="" class="product-card__link">
                     <img
-                      class="category-card__img"
+                      class="product-card__img"
                       src="images/category/burgers/burger-card-1.jpg"
                       width="140"
                       height="140"
@@ -162,19 +152,19 @@
                   <div class="product-card__price">
                     160 <span class="product-card__currency">грн.</span>
                   </div>
-                  <button class="btn btn--md product-card__btn">
+                  <button class="btn btn--md product-card__btn" type="button">
                     До кошика
                   </button>
                 </article>
               </li>
-              <li class="category__list__item">
+              <li class="categories-list__item category-1">
                 <article class="product-card">
                   <a href="" class="product-card__link">
                     <h3 class="product-card__title">Біфбургер</h3>
                   </a>
                   <a href="" class="product-card__link">
                     <img
-                      class="category-card__img"
+                      class="product-card__img"
                       src="images/category/burgers/burger-card-2.jpg"
                       width="140"
                       height="140"
@@ -184,19 +174,19 @@
                   <div class="product-card__price">
                     190 <span class="product-card__currency">грн.</span>
                   </div>
-                  <button class="btn btn--md product-card__btn">
+                  <button class="btn btn--md product-card__btn" type="button">
                     До кошика
                   </button>
                 </article>
               </li>
-              <li class="category__list__item">
+              <li class="categories-list__item category-1">
                 <article class="product-card">
                   <a href="" class="product-card__link">
                     <h3 class="product-card__title">Королівський чізбургер</h3>
                   </a>
                   <a href="" class="product-card__link">
                     <img
-                      class="category-card__img"
+                      class="product-card__img"
                       src="images/category/burgers/burger-card-3.jpg"
                       width="140"
                       height="140"
@@ -206,19 +196,19 @@
                   <div class="product-card__price">
                     260 <span class="product-card__currency">грн.</span>
                   </div>
-                  <button class="btn btn--md product-card__btn">
+                  <button class="btn btn--md product-card__btn" type="button">
                     До кошика
                   </button>
                 </article>
               </li>
-              <li class="category__list__item">
+              <li class="categories-list__item category-1">
                 <article class="product-card">
                   <a href="" class="product-card__link">
                     <h3 class="product-card__title">Чорний гамбургер</h3>
                   </a>
                   <a href="" class="product-card__link">
                     <img
-                      class="category-card__img"
+                      class="product-card__img"
                       src="images/category/burgers/burger-card-4.jpg"
                       width="140"
                       height="140"
@@ -228,19 +218,19 @@
                   <div class="product-card__price">
                     199 <span class="product-card__currency">грн.</span>
                   </div>
-                  <button class="btn btn--md product-card__btn">
+                  <button class="btn btn--md product-card__btn" type="button">
                     До кошика
                   </button>
                 </article>
               </li>
-              <li class="category__list__item">
+              <li class="categories-list__item category-1">
                 <article class="product-card">
                   <a href="" class="product-card__link">
                     <h3 class="product-card__title">Чікен бургер</h3>
                   </a>
                   <a href="" class="product-card__link">
                     <img
-                      class="category-card__img"
+                      class="product-card__img"
                       src="images/category/burgers/burger-card-5.jpg"
                       width="140"
                       height="140"
@@ -250,12 +240,12 @@
                   <div class="product-card__price">
                     180 <span class="product-card__currency">грн.</span>
                   </div>
-                  <button class="btn btn--md product-card__btn">
+                  <button class="btn btn--md product-card__btn" type="button">
                     До кошика
                   </button>
                 </article>
               </li>
-              <li class="category__list__item">
+              <li class="categories-list__item category-1">
                 <article class="product-card">
                   <a href="" class="product-card__link">
                     <h3 class="product-card__title">
@@ -264,7 +254,7 @@
                   </a>
                   <a href="" class="product-card__link">
                     <img
-                      class="category-card__img"
+                     class="product-card__img"
                       src="images/category/burgers/burger-card-1.jpg"
                       width="140"
                       height="140"
@@ -274,19 +264,19 @@
                   <div class="product-card__price">
                     160 <span class="product-card__currency">грн.</span>
                   </div>
-                  <button class="btn btn--md product-card__btn">
+                  <button class="btn btn--md product-card__btn" type="button">
                     До кошика
                   </button>
                 </article>
               </li>
-              <li class="category__list__item">
+              <li class="categories-list__item category-1">
                 <article class="product-card">
                   <a href="" class="product-card__link">
                     <h3 class="product-card__title">Біфбургер</h3>
                   </a>
                   <a href="" class="product-card__link">
                     <img
-                      class="category-card__img"
+                      class="product-card__img"
                       src="images/category/burgers/burger-card-2.jpg"
                       width="140"
                       height="140"
@@ -296,19 +286,19 @@
                   <div class="product-card__price">
                     190 <span class="product-card__currency">грн.</span>
                   </div>
-                  <button class="btn btn--md product-card__btn">
+                  <button class="btn btn--md product-card__btn" type="button">
                     До кошика
                   </button>
                 </article>
               </li>
-              <li class="category__list__item">
+              <li class="categories-list__item category-1">
                 <article class="product-card">
                   <a href="" class="product-card__link">
                     <h3 class="product-card__title">Королівський чізбургер</h3>
                   </a>
                   <a href="" class="product-card__link">
                     <img
-                      class="category-card__img"
+                      class="product-card__img"
                       src="images/category/burgers/burger-card-3.jpg"
                       width="140"
                       height="140"
@@ -318,19 +308,19 @@
                   <div class="product-card__price">
                     260 <span class="product-card__currency">грн.</span>
                   </div>
-                  <button class="btn btn--md product-card__btn">
+                  <button class="btn btn--md product-card__btn" type="button">
                     До кошика
                   </button>
                 </article>
-              </li>
-              <li class="category__list__item">
+              </li> -->
+              <li class="categories-list__item category-1">
                 <article class="product-card">
                   <a href="" class="product-card__link">
                     <h3 class="product-card__title">Чорний гамбургер</h3>
                   </a>
                   <a href="" class="product-card__link">
                     <img
-                      class="category-card__img"
+                      class="product-card__img"
                       src="images/category/burgers/burger-card-4.jpg"
                       width="140"
                       height="140"
@@ -340,19 +330,19 @@
                   <div class="product-card__price">
                     199 <span class="product-card__currency">грн.</span>
                   </div>
-                  <button class="btn btn--md product-card__btn">
+                  <button class="btn btn--md product-card__btn" type="button">
                     До кошика
                   </button>
                 </article>
               </li>
-              <li class="category__list__item">
+              <li class="categories-list__item category-1">
                 <article class="product-card">
                   <a href="" class="product-card__link">
                     <h3 class="product-card__title">Чікен бургер</h3>
                   </a>
                   <a href="" class="product-card__link">
                     <img
-                      class="category-card__img"
+                     class="product-card__img"
                       src="images/category/burgers/burger-card-5.jpg"
                       width="140"
                       height="140"
@@ -362,13 +352,191 @@
                   <div class="product-card__price">
                     180 <span class="product-card__currency">грн.</span>
                   </div>
-                  <button class="btn btn--md product-card__btn">
+                  <button class="btn btn--md product-card__btn" type="button">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="categories-list__item category-2">
+                <article class="product-card">
+                  <a href="" class="product-card__link">
+                    <h3 class="product-card__title">Королівський чізбургер</h3>
+                  </a>
+                  <a href="" class="product-card__link">
+                    <img
+                      class="product-card__img"
+                      src="images/category/burgers/burger-card-3.jpg"
+                      width="140"
+                      height="140"
+                      alt="зображення королівського чізбургера"
+                    />
+                  </a>
+                  <div class="product-card__price">
+                    260 <span class="product-card__currency">грн.</span>
+                  </div>
+                  <button class="btn btn--md product-card__btn" type="button">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="categories-list__item category-2">
+                <article class="product-card">
+                  <a href="" class="product-card__link">
+                    <h3 class="product-card__title">Чорний гамбургер</h3>
+                  </a>
+                  <a href="" class="product-card__link">
+                    <img
+                      class="product-card__img"
+                      src="images/category/burgers/burger-card-4.jpg"
+                      width="140"
+                      height="140"
+                      alt="зображення чорного гамбургера"
+                    />
+                  </a>
+                  <div class="product-card__price">
+                    199 <span class="product-card__currency">грн.</span>
+                  </div>
+                  <button class="btn btn--md product-card__btn" type="button">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="categories-list__item category-3">
+                <article class="product-card">
+                  <a href="" class="product-card__link">
+                    <h3 class="product-card__title">Чікен бургер</h3>
+                  </a>
+                  <a href="" class="product-card__link">
+                    <img
+                      class="product-card__img"
+                      src="images/category/burgers/burger-card-5.jpg"
+                      width="140"
+                      height="140"
+                      alt="зображення чікен бургера"
+                    />
+                  </a>
+                  <div class="product-card__price">
+                    180 <span class="product-card__currency">грн.</span>
+                  </div>
+                  <button class="btn btn--md product-card__btn" type="button">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="categories-list__item category-3">
+                <article class="product-card">
+                  <a href="" class="product-card__link">
+                    <h3 class="product-card__title">
+                      Чізбургер з листям салату
+                    </h3>
+                  </a>
+                  <a href="" class="product-card__link">
+                    <img
+                     class="product-card__img"
+                      src="images/category/burgers/burger-card-1.jpg"
+                      width="140"
+                      height="140"
+                      alt="зображення чізбургера з листям салату"
+                    />
+                  </a>
+                  <div class="product-card__price">
+                    160 <span class="product-card__currency">грн.</span>
+                  </div>
+                  <button class="btn btn--md product-card__btn" type="button">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="categories-list__item category-4">
+                <article class="product-card">
+                  <a href="" class="product-card__link">
+                    <h3 class="product-card__title">Біфбургер</h3>
+                  </a>
+                  <a href="" class="product-card__link">
+                    <img
+                      class="product-card__img"
+                      src="images/category/burgers/burger-card-2.jpg"
+                      width="140"
+                      height="140"
+                      alt="зображення біфбургера"
+                    />
+                  </a>
+                  <div class="product-card__price">
+                    190 <span class="product-card__currency">грн.</span>
+                  </div>
+                  <button class="btn btn--md product-card__btn" type="button">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="categories-list__item category-4">
+                <article class="product-card">
+                  <a href="" class="product-card__link">
+                    <h3 class="product-card__title">Королівський чізбургер</h3>
+                  </a>
+                  <a href="" class="product-card__link">
+                    <img
+                      class="product-card__img"
+                      src="images/category/burgers/burger-card-3.jpg"
+                      width="140"
+                      height="140"
+                      alt="зображення королівського чізбургера"
+                    />
+                  </a>
+                  <div class="product-card__price">
+                    260 <span class="product-card__currency">грн.</span>
+                  </div>
+                  <button class="btn btn--md product-card__btn" type="button">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="categories-list__item category-5">
+                <article class="product-card">
+                  <a href="" class="product-card__link">
+                    <h3 class="product-card__title">Чорний гамбургер</h3>
+                  </a>
+                  <a href="" class="product-card__link">
+                    <img
+                      class="product-card__img"
+                      src="images/category/burgers/burger-card-4.jpg"
+                      width="140"
+                      height="140"
+                      alt="зображення чорного гамбургера"
+                    />
+                  </a>
+                  <div class="product-card__price">
+                    199 <span class="product-card__currency">грн.</span>
+                  </div>
+                  <button class="btn btn--md product-card__btn" type="button">
+                    До кошика
+                  </button>
+                </article>
+              </li>
+              <li class="categories-list__item category-5">
+                <article class="product-card">
+                  <a href="" class="product-card__link">
+                    <h3 class="product-card__title">Чікен бургер</h3>
+                  </a>
+                  <a href="" class="product-card__link">
+                    <img
+                     class="product-card__img"
+                      src="images/category/burgers/burger-card-5.jpg"
+                      width="140"
+                      height="140"
+                      alt="зображення чікен бургера"
+                    />
+                  </a>
+                  <div class="product-card__price">
+                    180 <span class="product-card__currency">грн.</span>
+                  </div>
+                  <button class="btn btn--md product-card__btn" type="button">
                     До кошика
                   </button>
                 </article>
               </li>
             </ul>
-            <button class="td-link popular__btn">Показати ще</button>
+            <button class="td-link popular__btn" type="button">Показати ще</button>
           </div>
         </section>
       </main>
@@ -400,7 +568,7 @@
                     id="subscription"
                     required
                   />
-                  <button class="btn icon icon--send subscription__btn">
+                  <button class="btn icon icon--send subscription__btn" type="submit">
                     Підписатися
                   </button>
                 </form>
@@ -465,7 +633,7 @@
                   </li>
                   <li class="contacts__item">
                     <a
-                      class="contacts__link icon icon--link"
+                      class="contacts__link icon icon--email"
                       href="mailto:support@sfood.com"
                       >support@sfood.com</a
                     >
@@ -477,7 +645,7 @@
                       <span class="sr-only">Наш фейсбук</span>
                       <span
                         class="social__icon"
-                        style="-webkit-mask-image: url(); mask-image: url()"
+                        style="-webkit-mask-image: url('images/sprite.svg#icon-facebook'); mask-image: url('images/sprite.svg#icon-facebook')"
                       ></span>
                     </a>
                   </li>
@@ -486,7 +654,7 @@
                       <span class="sr-only">Наш твіттер</span>
                       <span
                         class="social__icon"
-                        style="-webkit-mask-image: url(); mask-image: url()"
+                        style="-webkit-mask-image: url('images/sprite.svg#icon-twitter'); mask-image: url('images/sprite.svg#icon-twitter')"
                       ></span>
                     </a>
                   </li>
@@ -495,7 +663,7 @@
                       <span class="sr-only">Наш інстаграм</span>
                       <span
                         class="social__icon"
-                        style="-webkit-mask-image: url(); mask-image: url()"
+                        style="-webkit-mask-image: url('images/sprite.svg#icon-instagram'); mask-image: url('images/sprite.svg#icon-instagram')"
                       ></span>
                     </a>
                   </li>

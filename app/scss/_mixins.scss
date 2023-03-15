@@ -1,6 +1,8 @@
+
 @mixin fz($max, $min, $wmax: 1920, $wmin: 375) {
-    font-size: calc(#{$min}px + (#{$max} - #{$min}) * ((100vw - #{$min}px) / (#{$wmax} - #{$wmin})));
+    font-size: calc(#{$min}px + (#{$max} - #{$min}) * ((100vw - #{$wmin}px) / (#{$wmax} - #{$wmin})));
 }
+
 
 @mixin line-clamp($lines: 1) {
     @if $lines <=1 {
