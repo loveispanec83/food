@@ -125,6 +125,12 @@ body {
       }
     }
 
+    &--arrow {
+      &::before {
+        mask-image: url(../images/sprite.svg#icon-arrow-right);
+      }
+    }
+
     &:hover {
       &::before {
         background-color: $c-white;

@@ -26,8 +26,8 @@ function styles() {
     src("app/scss/style.scss")
       .pipe(scss())
       .pipe(concat("style.css"))
-      // .pipe(scss({ outputStyle: "compressed" }))
-      // .pipe(concat("style.min.css"))
+      .pipe(scss({ outputStyle: "compressed" }))
+      .pipe(concat("style.min.css"))
       .pipe(
         autoprefixer({
           overrideBrowserslist: ["last 10 versions"],
@@ -43,6 +43,7 @@ function scripts() {
   return src([
     "node_modules/jquery/dist/jquery.js",
     "node_modules/mixitup/dist/mixitup.min.js",
+    "node_modules/slick-carousel/slick/slick.js",
     "app/js/main.js",
   ])
     .pipe(concat("main.min.js"))
@@ -86,7 +87,7 @@ function convertFonts() {
 }
 
 function build() {
-  return src(["app/**/*.html", "app/css/style.css", "app/js/main.min.js"], {
+  return src(["app/**/*.html", "app/css/style.min.css", "app/js/main.min.js"], {
     base: "app",
   }).pipe(dest("dist"));
 }

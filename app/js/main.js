@@ -1,6 +1,4 @@
-
 document.addEventListener("DOMContentLoaded", () => {
-  
   const header = document.querySelector(".header");
 
   window.onscroll = () => {
@@ -9,8 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       header.classList.remove("sticky");
     }
-  };
-
+    };
+    
 const filterBtns = document.querySelectorAll(".categories-nav__btn");
 const grid = document.querySelector(".categories-list");
 
@@ -45,4 +43,9 @@ filterBtns.forEach((btn) => {
   });
 });
 
+
+});
+
+$(function () {
+  $(".reviews-slider").slick({});
 });

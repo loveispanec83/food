@@ -3,11 +3,19 @@
 @import 'reset';
 @import 'fonts';
 @import 'vars';
+@import 'libs';
 @import 'global';
+
 
 @import 'parts/header';
 @import 'parts/hero-section';
 @import 'parts/popular-section';
 @import 'parts/categories';
 @import 'parts/product-card';
+@import 'parts/features';
+@import 'parts/restorants';
+@import 'parts/restorants-card';
+@import 'parts/reviews';
+@import 'parts/reviews-slider';
+@import 'parts/download';
 @import 'parts/footer';
