@@ -1,7 +1,9 @@
-.restorants-list {
+.restorants {
+  &__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
+  }
 
   &__item {
     border-radius: 10px;

@@ -47,5 +47,9 @@ filterBtns.forEach((btn) => {
 });
 
 $(function () {
-  $(".reviews-slider").slick({});
+  $(".reviews-slider").slick({
+    dots: true,
+    arrows: true,
+  });
+  
 });

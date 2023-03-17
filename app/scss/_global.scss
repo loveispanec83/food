@@ -131,6 +131,26 @@ body {
       }
     }
 
+    &--delivery {
+      &::before {
+        mask-image: url(../images/sprite.svg#icon-timer);
+        background-color: $c-orange-900;
+      }
+    }
+
+    &--courier {
+      &::before {
+        mask-image: url(../images/sprite.svg#icon-delivery);
+        background-color: #00AAFF;
+      }
+    }
+
+    &--build {
+      &::before {
+        mask-image: url(../images/sprite.svg#icon-restorant);
+      }
+    }
+
     &:hover {
       &::before {
         background-color: $c-white;
