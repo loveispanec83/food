@@ -1,31 +1,50 @@
+$rightPos: calc((100vw - 1170px) / 2 );         
+
+
 .application {
-  padding-top: 60px;
-  &__inner {
-    display: flex;
-    align-items: center;
-    min-height: 380px;
+  
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: right center;
-  }
+    background-position: right $rightPos center;
+  
 
   &__title {
-    text-align: start;
+    text-align: left;
     margin-bottom: 45px;
+    
   }
 
   &__content {
     max-width: 470px;
+    padding: 40px 0;
+    background-color: rgba($c-white, 0.85);
   }
 
-  &__text {
+  &__info {
     font-size: 20px;
     line-height: 1.5;
     margin-bottom: 30px;
   }
-}
 
-.download-links {
-  display: flex;
-  gap: 30px;
+  &__list {
+    display: flex;
+    gap: 30px;
+  }
+
+.app-icon {
+  display: block;
+  width: 120px;
+  height: 40px;
+  background-image: url('../../images/app_store.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &--google {
+    width: 135px;
+    background-image: url('../../images/play_store.svg');
+  }
+}
+  
+
 }

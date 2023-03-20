@@ -43,13 +43,27 @@ filterBtns.forEach((btn) => {
   });
 });
 
-
-});
-
-$(function () {
-  $(".reviews-slider").slick({
-    dots: true,
-    arrows: true,
-  });
+const swiper = new Swiper(".reviews__slider", {
+  pagination: {
+    el: ".reviews__dots",
+    bulletClass: "reviews__dot",
+    bulletActiveClass: "reviews__dot--active",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".reviews__btn--next",
+    prevEl: ".reviews__btn--prev",
+  },
+});  
   
+  
+
 });
+
+// $(function () {
+//   $(".reviews-slider").slick({
+//     dots: true,
+//     arrows: true,
+//   });
+  
+// });

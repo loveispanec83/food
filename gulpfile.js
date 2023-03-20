@@ -22,21 +22,19 @@ function browsersync() {
 
 /*FIX: dont minify*/
 function styles() {
-  return (
-    src("app/scss/style.scss")
-      .pipe(scss())
-      .pipe(concat("style.css"))
-      .pipe(scss({ outputStyle: "compressed" }))
-      .pipe(concat("style.min.css"))
-      .pipe(
-        autoprefixer({
-          overrideBrowserslist: ["last 10 versions"],
-          grid: true,
-        })
-      )
-      .pipe(dest("app/css"))
-      .pipe(browserSync.stream())
-  );
+  return src("app/scss/style.scss")
+    .pipe(scss())
+    // .pipe(concat("style.css"))
+    // .pipe(scss({ outputStyle: "compressed" }))
+    // .pipe(concat("style.min.css"))
+    .pipe(
+      autoprefixer({
+        overrideBrowserslist: ["last 10 versions"],
+        grid: true,
+      })
+    )
+    .pipe(dest("app/css"))
+    .pipe(browserSync.stream());
 }
 
 function scripts() {
@@ -97,7 +95,7 @@ function cleanDist() {
 }
 
 function watching() {
-  watch(["app/scss/**/*.scss"], styles);
+  watch(["app/scss/**/*.scss"], styles).on("change", browserSync.reload);
   watch(["app/js/**/*.js", "!app/js/main.min.js"], scripts);
   watch(["app/**/*.html"]).on("change", browserSync.reload);
   watch(["app/images/sprite-icons/*.svg"], svgSprites);

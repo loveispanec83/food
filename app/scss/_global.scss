@@ -97,7 +97,7 @@ body {
 
     &--sets {
       &::before {
-        mask-image: url(../images/sprite.svg#icon-);
+        mask-image: url(../images/sprite.svg#icon-category-dish);
       }
     }
 
@@ -134,14 +134,12 @@ body {
     &--delivery {
       &::before {
         mask-image: url(../images/sprite.svg#icon-timer);
-        background-color: $c-orange-900;
       }
     }
 
     &--courier {
       &::before {
         mask-image: url(../images/sprite.svg#icon-delivery);
-        background-color: #00AAFF;
       }
     }
 
@@ -150,6 +148,18 @@ body {
         mask-image: url(../images/sprite.svg#icon-restorant);
       }
     }
+
+   &--arrow {
+      &::before {
+        mask-image: url(../images/sprite.svg#icon-arrow-right);
+      }
+    } 
+     &--time {
+      &::before {
+        mask-image: url(../images/sprite.svg#icon-time);
+      }
+    } 
+
 
     &:hover {
       &::before {
@@ -308,4 +318,14 @@ text-align: center;
 .show {
     opacity: 1;
     transition: opacity 0.5s ease-in-out;
+}
+
+.cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+
+  &--4 {
+    grid-template-columns: repeat(4, 1fr);;
+  }
 }
