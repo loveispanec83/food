@@ -5,9 +5,13 @@
 @import 'vars';
 @import 'libs';
 @import 'global';
+@import 'media';
 
 
 @import 'parts/header';
+@import 'parts/burger';
+@import 'parts/burger-nav';
+@import 'parts/burger-list';
 @import 'parts/hero-section';
 @import 'parts/popular-section';
 @import 'parts/categories';

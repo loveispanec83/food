@@ -18,10 +18,15 @@
             display: flex;
             align-items: center;
             gap:50px;
+
+             @include mq(tablet) {
+                justify-content: space-between;
+            }
 		}
 
 		&__actions {
             display: flex;
+            order: 2;
             align-items: center;
             gap: 10px;
 		}
@@ -72,4 +77,7 @@
                 color: $c-orange-900;
 		    }
 	    } 
+      @include mq(tablet) {
+                display: none;
+            }
 }

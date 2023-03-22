@@ -40,6 +40,19 @@ body {
   &__img{
     object-fit: contain;
   }
+
+}
+
+.burger {
+  display: none;
+}
+
+ .burger-nav {
+  display: none;
+ }
+
+.active {
+  opacity: 1;
 }
 
 .icon{

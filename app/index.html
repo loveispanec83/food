@@ -66,7 +66,74 @@
                   >Переглянути кошик. Кількість товарів в кошику.</span>
                 <span class="btn-counter">4</span>
               </button>
+             
+                <div class="burger-menu">
+                  <a href="" class="burger-menu_button">
+                    <spun class="burger-menu_lines"></spun>
+                  </a>
+                  <nav class="burger-menu_nav">
+                    <a href="#main" class="burger-menu_link">Головна</a>
+                    <a href="#popular" class="burger-menu_link">Страви</a>
+                    <a href="#footer__content" class="burger-menu_link">Контакти</a>
+                  <div class="burger-menu__contacts">
+              <h3 class="sr-only">Контактна інформація, соцмережі.</h3>
+              <adress class="contacts">
+                <ul class="contacts__list">
+                  <li class="contacts__item">
+                    <a class="contacts__link icon icon--adress" href=""
+                      >вул. Т.Г.Шевченка, 1</a
+                    >
+                  </li>
+                  <li class="contacts__item">
+                    <a
+                      class="contacts__link icon icon--phone"
+                      href="tel:380501112233"
+                      >380501112233</a
+                    >
+                  </li>
+                  <li class="contacts__item">
+                    <a
+                      class="contacts__link icon icon--email"
+                      href="mailto:support@sfood.com"
+                      >support@sfood.com</a
+                    >
+                  </li>
+                </ul>
+                <ul class="social">
+                  <li class="social__item">
+                    <a class="social__link" href="#">
+                      <span class="sr-only">Наш фейсбук</span>
+                      <span
+                        class="social__icon"
+                        style="-webkit-mask-image: url('images/sprite.svg#icon-facebook'); mask-image: url('images/sprite.svg#icon-facebook')"
+                      ></span>
+                    </a>
+                  </li>
+                  <li class="social__item">
+                    <a class="social__link" href="#">
+                      <span class="sr-only">Наш твіттер</span>
+                      <span
+                        class="social__icon"
+                        style="-webkit-mask-image: url('images/sprite.svg#icon-twitter'); mask-image: url('images/sprite.svg#icon-twitter')"
+                      ></span>
+                    </a>
+                  </li>
+                  <li class="social__item">
+                    <a class="social__link" href="#">
+                      <span class="sr-only">Наш інстаграм</span>
+                      <span
+                        class="social__icon"
+                        style="-webkit-mask-image: url('images/sprite.svg#icon-instagram'); mask-image: url('images/sprite.svg#icon-instagram')"
+                      ></span>
+                    </a>
+                  </li>
+                </ul>
+              </adress>
             </div>
+                  </nav>
+                   <div class="burger-menu_overlay"></div>
+               </div>
+              </div>
           </nav>
         </div>
       </header>
@@ -75,7 +142,7 @@
           Сервіс доставки SimpleFood - номер один у місті Київ
         </h1>
         <section
-          class="hero mb-120"
+          class="hero mb-120" id="main"
           style="background-image: url('images/hero_bg.png')"
         >
           <h2 class="sr-only">Особливості сервісу доставки SimpleFood</h2>
@@ -95,7 +162,7 @@
             </div>
           </div>
         </section>
-        <section class="popular mb-120" >
+        <section class="popular mb-120" id="popular">
           <div class="container">
             <h2 class="title">Популярне в категоріях</h2>
             <ul class="categories-nav popular__nav">
@@ -835,7 +902,7 @@
       </main>
       <footer class="footer">
         <div class="container">
-          <section class="footer__content">
+          <section class="footer__content" id="footer__content">
             <h2 class="sr-only">Додаткова інформація</h2>
             <div class="footer__subscription">
               <h3 class="sr-only">Інформація про підписку</h3>
