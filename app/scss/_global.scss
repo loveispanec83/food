@@ -8,8 +8,23 @@ body {
 }
 
 .wrapper {
+  padding-top: size(159, 72);
   overflow-x: hidden;
 }
+
+.lock {
+  overflow: hidden;
+
+  .header {
+    &::before {
+      @include r($size-md) {
+      opacity: 1;
+      visibility: visible;
+      z-index: 10;
+                    }
+      }
+    }
+  }
 
 .container {
   max-width: 1200px;
@@ -43,13 +58,6 @@ body {
 
 }
 
-.burger {
-  display: none;
-}
-
- .burger-nav {
-  display: none;
- }
 
 .active {
   opacity: 1;
@@ -173,6 +181,17 @@ body {
       }
     } 
 
+    &--close {
+      &::before {
+        mask-image: url(../images/sprite.svg#icon-close);
+      }
+    } 
+
+     &--burger-menu {
+      &::before {
+        mask-image: url(../images/sprite.svg#icon-burger-menu);
+      }
+    }
 
     &:hover {
       &::before {

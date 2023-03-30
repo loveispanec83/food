@@ -37,7 +37,7 @@
       <header class="header">
         <div class="container">
           <nav class="header__nav">
-            <a class="logo" href="#">
+            <a class="logo header__logo" href="#">
               <img
                 class="logo__img"
                 src="images/logo.svg"
@@ -46,7 +46,7 @@
                 alt="Логотип SimpleFood"
               />
             </a>
-            <ul class="menu">
+            <ul class="menu header__menu">
               <li class="menu__item">
                 <a class="menu__link menu__link--current" href="#">Головна</a>
               </li>
@@ -66,19 +66,42 @@
                   >Переглянути кошик. Кількість товарів в кошику.</span>
                 <span class="btn-counter">4</span>
               </button>
-             
-                <div class="burger-menu">
-                  <a href="" class="burger-menu_button">
-                    <spun class="burger-menu_lines"></spun>
-                  </a>
-                  <nav class="burger-menu_nav">
-                    <a href="#main" class="burger-menu_link">Головна</a>
-                    <a href="#popular" class="burger-menu_link">Страви</a>
-                    <a href="#footer__content" class="burger-menu_link">Контакти</a>
-                  <div class="burger-menu__contacts">
-              <h3 class="sr-only">Контактна інформація, соцмережі.</h3>
-              <adress class="contacts">
-                <ul class="contacts__list">
+              <button class="burger  icon icon--burger-menu" type="button">
+                <span class="sr-only">Показати меню</span>
+              </button>
+            </div>
+          </nav>
+        </div>
+        <div class="mobile-nav">
+          <div class="mobile-nav__head">
+             <a class="logo" href="#">
+              <img
+                class="logo__img"
+                src="images/logo.svg"
+                width="200"
+                height="39"
+                alt="Логотип SimpleFood"
+              />
+            </a>
+            <button class="close-btn icon icon--close" type="button">
+              <span class="sr-only">
+                Сховати меню
+              </span>
+            </button>
+          </div>
+          <ul class="menu mobile-nav__menu">
+             <li class="menu__item">
+                <a class="menu__link menu__link--current" href="#">Головна</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Страви</a>
+              </li>
+              <li class="menu__item">
+                <a class="menu__link" href="#">Контакти</a>
+              </li>
+          </ul>
+          <adress class=" contacts ">
+            <ul class="contacts__list mobile-nav__contacts">
                   <li class="contacts__item">
                     <a class="contacts__link icon icon--adress" href=""
                       >вул. Т.Г.Шевченка, 1</a
@@ -98,8 +121,8 @@
                       >support@sfood.com</a
                     >
                   </li>
-                </ul>
-                <ul class="social">
+            </ul>
+            <ul class="social mobile-nav__social">
                   <li class="social__item">
                     <a class="social__link" href="#">
                       <span class="sr-only">Наш фейсбук</span>
@@ -127,14 +150,8 @@
                       ></span>
                     </a>
                   </li>
-                </ul>
-              </adress>
-            </div>
-                  </nav>
-                   <div class="burger-menu_overlay"></div>
-               </div>
-              </div>
-          </nav>
+            </ul>
+          </adress>
         </div>
       </header>
       <main class="page">
