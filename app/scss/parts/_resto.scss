@@ -1,8 +1,16 @@
 .restorants {
+
   &__list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
+  box-sizing: border-box !important;
+  // display: grid;
+  // grid-template-columns: repeat(3, 1fr);
+  // gap: 30px;
+
+  @include r($size-md) {
+    grid-template-columns: repeat(2, minmax(auto, 370px));
+    gap: 10px;
+    justify-content: center;
+  }
   }
 
   &__item {
