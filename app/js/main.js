@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const body = document.querySelector("body");
   
   if (window.innerWidth <= 992) {
-    
+    console.log("576");
     const burger = document.querySelector(".burger");
     closeBtn = document.querySelector(".close-btn");
     const mobileNav = document.querySelector(".mobile-nav");
@@ -88,5 +88,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
   
+  if (window.innerWidth <= 576) {
+    const restoSlider = new Swiper(".resto__slider", {
+      slidesPerView: 1,
+      slidesPerGroup: 1,
+      centeredSlides: true,
+      centeredSlidesBounds: true,
+      pagination: {
+        el: ".resto__dots",
+        bulletClass: "resto__dot",
+        bulletActiveClass: "resto__dot--active",
+        clickable: true,
+      },
+    });
+  }
 
 })
