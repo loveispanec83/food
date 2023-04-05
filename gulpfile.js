@@ -6,6 +6,7 @@ const uglify = require("gulp-uglify");
 const imagemin = require("gulp-imagemin");
 const del = require("del");
 const browserSync = require("browser-sync").create();
+const fileInclude = require("gulp-file-include");
 
 /*ADD: new plugins*/
 const svgSprite = require("gulp-svg-sprite");
@@ -79,6 +80,17 @@ function svgSprites() {
     .pipe(dest("app/images"));
 }
 
+const htmlInclude = () => {
+  return src(['app/html/*.html'])
+    .pipe(fileInclude({
+      prefix: '@',
+      basepath: '@file',
+    }))
+    .pipe(dest('app'))
+    .pipe(browserSync.stream());
+}
+
+
 /*ADD: convert fonts */
 function convertFonts() {
   return src("app/fonts/*.ttf").pipe(tt2woff2()).pipe(dest("app/fonts"));
@@ -109,7 +121,8 @@ exports.images = images;
 exports.cleanDist = cleanDist;
 exports.svgSprites = svgSprites;
 exports.convertFonts = convertFonts;
+exports.fileInclude = fileInclude;
 
 exports.build = series(cleanDist, images, build);
 
-exports.default = parallel(svgSprites, styles, scripts, browsersync, watching);
+exports.default = parallel(fileInclude, svgSprites, styles, scripts, browsersync, watching);

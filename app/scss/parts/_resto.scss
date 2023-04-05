@@ -2,9 +2,7 @@
 
   &__list {
   box-sizing: border-box !important;
-  // display: grid;
-  // grid-template-columns: repeat(3, 1fr);
-  // gap: 30px;
+
 
   @include r($size-md) {
     grid-template-columns: repeat(2, minmax(auto, 370px));
@@ -30,6 +28,13 @@
     overflow: visible;
     @include r($size-xs) {
       overflow: hidden;
+    }
+    .resto__dots {
+      display: none;
+
+      @include r($size-xs) {
+      display: flex;
+    }
     }
   }
 

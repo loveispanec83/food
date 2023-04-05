@@ -1,6 +1,8 @@
+
+
 document.addEventListener("DOMContentLoaded", () => {
-  
   const header = document.querySelector(".header");
+  const body = document.querySelector("body");
 
   window.onscroll = () => {
     if (window.pageYOffset > 100) {
@@ -9,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
       header.classList.remove("sticky");
     }
   };
-    
+
   const filterBtns = document.querySelectorAll(".categories-nav__btn");
   const grid = document.querySelector(".categories-list");
 
@@ -56,51 +58,77 @@ document.addEventListener("DOMContentLoaded", () => {
       prevEl: ".reviews__btn--prev",
     },
   });
-  
+
   //burger
-  const body = document.querySelector("body");
-  
-  if (window.innerWidth <= 992) {
-    console.log("576");
-    const burger = document.querySelector(".burger");
-    closeBtn = document.querySelector(".close-btn");
-    const mobileNav = document.querySelector(".mobile-nav");
+  window.addEventListener("resize", function () {
+    // виконуємо дії при зміні розміру екрану
 
-    burger.addEventListener("click", () => {
-      body.classList.add("lock");
-      mobileNav.classList.add("open");
-    });
+    // додайте свій код тут
+    if (window.innerWidth <= 992) {
+      console.log("бургер");
+      const burger = document.querySelector(".burger");
+      closeBtn = document.querySelector(".close-btn");
+      const mobileNav = document.querySelector(".mobile-nav");
 
-    closeBtn.addEventListener("click", () => {
-      body.classList.remove("lock");
-      mobileNav.classList.remove("open");
-    });
+      burger.addEventListener("click", () => {
+        body.classList.add("lock");
+        mobileNav.classList.add("open");
+      });
 
-    document.addEventListener("click", function (e) {
-      if (
-        e.target !== closeBtn &&
-        e.target !== burger &&
-        e.target !== mobileNav
-      ) {
+      closeBtn.addEventListener("click", () => {
         body.classList.remove("lock");
         mobileNav.classList.remove("open");
+      });
+
+      document.addEventListener("click", function (e) {
+        if (
+          e.target !== closeBtn &&
+          e.target !== burger &&
+          e.target !== mobileNav
+        ) {
+          body.classList.remove("lock");
+          mobileNav.classList.remove("open");
+        }
+      });
+    }
+  });
+
+  const slider = document.querySelector(".resto__slider");
+
+  let mySwiper;
+
+  function mobilesSlider() {
+    if (window.innerWidth <= 576 && slider.dataset.mobile == "false") {
+      // створюємо слайдер
+      mySwiper = new Swiper(slider, {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        centeredSlides: true,
+        centeredSlidesBounds: true,
+        pagination: {
+          el: ".resto__dots",
+          bulletClass: "resto__dot",
+          bulletActiveClass: "resto__dot--active",
+          clickable: true,
+        },
+      });
+      slider.dataset.mobile = "true";
+    }
+
+    if (window.innerWidth > 576) {
+      slider.dataset.mobile = "false";
+
+      const restoSlider = document.querySelector(".resto__slider").swiper;
+      if (restoSlider) {
+        restoSlider.destroy();
       }
-    });
-  }
-  
-  if (window.innerWidth <= 576) {
-    const restoSlider = new Swiper(".resto__slider", {
-      slidesPerView: 1,
-      slidesPerGroup: 1,
-      centeredSlides: true,
-      centeredSlidesBounds: true,
-      pagination: {
-        el: ".resto__dots",
-        bulletClass: "resto__dot",
-        bulletActiveClass: "resto__dot--active",
-        clickable: true,
-      },
-    });
+    }
   }
 
-})
+  mobilesSlider();
+
+  window.addEventListener("resize", () => {
+    mobilesSlider();
+  });
+
+});

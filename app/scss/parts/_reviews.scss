@@ -2,6 +2,10 @@
 
   &__list {
     margin-bottom: 30px;
+
+    @include r($size-xs) {
+      margin-bottom: 0;
+    }
   }
 
   &__actions {
@@ -38,11 +42,27 @@
       transition: background-color 0.3s ease-in-out;
     }
 
+    @include r($size-xs) {
+      position: absolute;
+      z-index: 2;
+      top: 30px;
+    
+    }
+
     &--prev {
       &::before {
         mask-image: url('../images/sprite.svg#icon-left');
       }
-      
+
+      @include r($size-xs) {
+        left: calc(50% - 140px);
+    }
+    }
+
+    &--next {
+      @include r($size-xs) {
+        right: calc(50% - 140px);
+    }
     }
 
     &[disabled] {
@@ -118,4 +138,12 @@
     }
   }
 
+
+  &__slider {
+    .reviews__dots {
+       @include r($size-xs) {
+      display: none;
+    }
+    }
+  }
 }
