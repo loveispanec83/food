@@ -6,7 +6,7 @@
 @import 'global';
 @import 'media';
 
-
+@import 'parts/breadcrumbs';
 @import 'parts/menu';
 @import 'parts/header';
 @import 'parts/mobile-nav';
@@ -20,4 +20,6 @@
 @import 'parts/reviews';
 @import 'parts/reviews-card';
 @import 'parts/application';
+@import 'parts/catalog';
+
 @import 'parts/footer';

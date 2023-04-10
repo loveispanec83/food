@@ -26,6 +26,9 @@
     <link rel="manifest" href="favicon/site.webmanifest" />
     <meta name="msapplication-TileColor" content="#da532c" />
     <meta name="theme-color" content="#ffffff" />
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.css" rel="stylesheet"/>
+
+
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
@@ -34,7 +37,9 @@
   </head>
   <body>
     <div class="wrapper">
-      <header class="header">
+
+
+       <header class="header">
         <div class="container">
           <nav class="header__nav">
             <a class="logo header__logo" href="#">
@@ -154,11 +159,9 @@
           </adress>
         </div>
       </header>
-      <main class="page">
-        <h1 class="sr-only">
-          Сервіс доставки SimpleFood - номер один у місті Київ
-        </h1>
-        <section
+    <main class="page">
+        <h1 class="sr-only">Сервіс доставки SimpleFood - номер один у місті Київ</h1>
+          <section
           class="hero mb-120" id="main"
           style="background-image: url('images/hero_bg.png')"
         >
@@ -181,7 +184,7 @@
             </div>
           </div>
         </section>
-        <section class="popular mb-120" id="popular">
+         <section class="popular mb-120" id="popular">
           <div class="container">
             <h2 class="title">Популярне в категоріях</h2>
             <ul class="categories-nav popular__nav">
@@ -628,7 +631,7 @@
             <button class="td-link popular__btn" type="button">Показати ще</button>
           </div>
         </section>
-        <section class="features mb-120">
+            <section class="features mb-120">
           <h2 class="sr-only">Переваги сервісу доставки Food Simple</h2>
             <div class="container">
               <div class="features__inner" style="background-image: url(images/food_delivery.png);">
@@ -658,7 +661,7 @@
               </div>
             </div>
         </section>
-        <section class="resto mb-120">
+          <section class="resto mb-120">
         <div class="container">
           <h2 class="title">Найкращі ресторани</h2>
           <div class="resto__slider swiper" data-mobile="false">
@@ -891,7 +894,7 @@
           </div>
         </div>
         </section>
-        <section class="application mb-120" style="background-image: url(images/get_app.png);">
+          <section class="application mb-120" style="background-image: url(images/get_app.png);">
         <h2 class="sr-only">Застосунок SimpleFood для швидкого та зручного замовлення їжі</h2>
         <div class="container">
             <div class="application__content">
@@ -922,8 +925,9 @@
             </div>
         </div>
         </section>
-      </main>
-      <footer class="footer">
+    </main>
+
+    <footer class="footer">
         <div class="container">
           <section class="footer__content" id="footer__content">
             <h2 class="sr-only">Додаткова інформація</h2>
@@ -1057,8 +1061,10 @@
         </div>
         <div class="footer__bottom">&copy; 2023 Simple Food</div>
       </footer>
-      <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-      <script src="js/main.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.0/nouislider.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="js/main.min.js"></script>
     </div>
   </body>
 </html>

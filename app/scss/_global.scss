@@ -193,6 +193,24 @@ body {
       }
     }
 
+    &--filter {
+      &::before {
+        mask-image: url(../images/sprite.svg#icon-filters);
+      }
+    }
+
+    &--chevron-left {
+      &::before {
+        mask-image: url(../images/sprite.svg#icon-chevron-left);
+      }
+    }
+
+    &--chevron-right {
+      &::before {
+        mask-image: url(../images/sprite.svg#icon-chevron-right);
+      }
+    }
+
     &:hover {
       &::before {
         background-color: $c-white;

@@ -17,7 +17,7 @@ function browsersync() {
     server: {
       baseDir: "app/",
     },
-    notofy: false,
+    notify: false,
   });
 }
 
@@ -80,7 +80,7 @@ function svgSprites() {
     .pipe(dest("app/images"));
 }
 
-const htmlInclude = () => {
+function htmlInclude() {
   return src(['app/html/*.html'])
     .pipe(fileInclude({
       prefix: '@',
@@ -121,8 +121,8 @@ exports.images = images;
 exports.cleanDist = cleanDist;
 exports.svgSprites = svgSprites;
 exports.convertFonts = convertFonts;
-exports.fileInclude = fileInclude;
+exports.htmlInclude = htmlInclude;
 
 exports.build = series(cleanDist, images, build);
 
-exports.default = parallel(fileInclude, svgSprites, styles, scripts, browsersync, watching);
+exports.default = parallel(htmlInclude, svgSprites, styles, scripts, browsersync, watching);

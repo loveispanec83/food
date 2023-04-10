@@ -63,11 +63,9 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", function () {
     // виконуємо дії при зміні розміру екрану
 
-    // додайте свій код тут
     if (window.innerWidth <= 992) {
-      console.log("бургер");
       const burger = document.querySelector(".burger");
-      closeBtn = document.querySelector(".close-btn");
+      const closeBtn = document.querySelector(".close-btn");
       const mobileNav = document.querySelector(".mobile-nav");
 
       burger.addEventListener("click", () => {
@@ -84,12 +82,28 @@ document.addEventListener("DOMContentLoaded", () => {
         if (
           e.target !== closeBtn &&
           e.target !== burger &&
-          e.target !== mobileNav
+          e.target !== mobileNav &&
+          e.target !== filterBtn &&
+          e.target !== filterSidebar
         ) {
           body.classList.remove("lock");
           mobileNav.classList.remove("open");
+          filterSidebar.classList.remove("open");
         }
       });
+
+      const filterBtn = document.querySelector(".filter-btn");
+      const filterCloseBtn = document.querySelector(".sidebar__btn");
+      const filterSidebar = document.querySelector(".sidebar");
+
+      filterBtn.addEventListener('click', () => {
+        filterSidebar.classList.add('open');
+        body.classList.add("lock");
+      });
+
+      filterCloseBtn.addEventListener("click", () => {
+        filterSidebar.classList.remove("open");
+       });
     }
   });
 
@@ -130,5 +144,81 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", () => {
     mobilesSlider();
   });
+ 
+  
+
 
 });
+
+
+const rangeSlider = document.querySelector(".range__slider");
+const inputMin = document.querySelector(".range__input--min");
+const inputMax = document.querySelector(".range__input--max");
+
+noUiSlider.create(rangeSlider, {
+  start: [100, 1000],
+  connect: true,
+  padding: [0, 0],
+  animate: true,
+  cssPrefix: 'noUi-',
+  step: 10,
+  range: {
+    min: 50,
+    max: 1200,
+  },
+});
+
+rangeSlider.noUiSlider.on("update", function (values, handle) {
+  // let value = values[handle];
+  let value = parseFloat(values[handle]).toFixed(0);
+  if (handle) {
+    inputMax.value = value;
+  } else {
+    inputMin.value = value;
+  }
+});
+
+// Оновлення значень слайдера при зміні input-ів
+inputMin.addEventListener("change", function () {
+  rangeSlider.noUiSlider.set([this.value, null]);
+});
+
+inputMax.addEventListener("change", function () {
+  rangeSlider.noUiSlider.set([null, this.value]);
+});
+
+ const slider2 = document.querySelector(".discount__slider");
+
+ let mySwiper2;
+
+ function mobilSlider() {
+   if (window.innerWidth <= 768 && slider2.dataset.mobile == "false") {
+     // створюємо слайдер
+     mySwiper2 = new Swiper(slider2, {
+       slidesPerView: 1,
+       slidesPerGroup: 1,
+       centeredSlides: true,
+       centeredSlidesBounds: true,
+       pagination: {
+         el: ".discount__dots",
+         bulletClass: "discount__dot",
+         bulletActiveClass: "discount__dot--active",
+         clickable: true,
+       },
+     });
+     slider2.dataset.mobile = "true";
+   }
+
+   if (window.innerWidth > 768) {
+     slider2.dataset.mobile = "false";
+
+     const discountSlider = document.querySelector(".discount__slider").swiper;
+     if (discountSlider) {
+       discountSlider.destroy();
+     }
+   }
+ }
+ mobilSlider();
+ window.addEventListener("resize", () => {
+   mobilSlider();
+ });
