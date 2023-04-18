@@ -1,0 +1,15 @@
+.select {
+    padding: 15px;
+    // padding-right: 41px;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: 0.03em;
+    border: 1px solid $c-gray;
+    border-radius: 3px;
+
+    background-image: url(../images/sprite.svg#icon-chevron-down);
+    background-position: right 10px center;
+    background-repeat: no-repeat;
+    background-size: 10px;
+
+}

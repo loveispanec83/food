@@ -1,0 +1,42 @@
+.sidebar {
+    min-width: 270px;
+    background-color: $c-white;
+    transition: all 0.3s ease-in-out;
+
+    @include r($size-md) {
+        position: fixed;
+        width: 300px;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 9999;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(-200%);
+    }
+
+    &.open {
+        @include r($size-md) {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+         }
+    }
+
+    &__head {
+        display: none;
+        padding: 20px;
+        justify-content: flex-end;
+
+        @include r($size-md) {
+            display: flex;
+        }
+    
+    }
+
+    &__inner {
+        width: 270px;
+        overflow-y: auto;
+        height: calc(100vh - 100px);
+    }
+}

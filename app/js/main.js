@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const header = document.querySelector(".header");
   const body = document.querySelector("body");
 
+  //................--->SCROLL<---...................//
   window.onscroll = () => {
     if (window.pageYOffset > 100) {
       header.classList.add("sticky");
@@ -11,7 +12,104 @@ document.addEventListener("DOMContentLoaded", () => {
       header.classList.remove("sticky");
     }
   };
+  //.................--->END<---.....................//
+//...............-->TABS<--.............////
+  const tabsNav = document.querySelectorAll(".tabs-nav__link");
+  const tabsContent = document.querySelectorAll(".tabs-content__item");
 
+  tabsNav.forEach((navLink, index) => {
+    navLink.addEventListener("click", () => {
+      tabsNav.forEach((link) => {
+        link.classList.remove("active");
+      });
+
+      navLink.classList.add("active");
+
+      let navIndex = index;
+
+      tabsContent.forEach((item, index) => {
+        item.classList.remove("active");
+
+        if (index === navIndex) {
+          item.classList.add("active");
+        }
+      });
+    });
+  });
+  //..............-->End<--....................////
+
+//...................-->STARS<--.................///
+  const staticStars = document.querySelectorAll(".static-stars");
+
+  staticStars.forEach((starItem, index) => {
+    let stars = starItem.dataset.stars;
+
+    new Starry(starItem, {
+      name: `stars-${index}`,
+      readOnly: true,
+      beginWith: 20 * stars,
+      icons: {
+        blank: "images/star-empty.svg",
+        hover: "images/star-fill.svg",
+        active: "images/star-fill.svg",
+      },
+    });
+  });
+
+  const rateStars = document.querySelector(".feedback-form__stars");
+  const rating = new Starry(rateStars, {
+    name: `rating`,
+    icons: {
+      blank: "images/star-empty.svg",
+      hover: "images/star-fill.svg",
+      active: "images/star-fill.svg",
+    },
+  });
+  //...............-->END<--.........................///////
+
+
+  ///lightSlider//
+ const lightbox = document.querySelector(".product-slider__items");
+
+ lightGallery(lightbox, {
+   plugins: [lgPager],
+   speed: 100,
+   addClass: "product-lightbox",
+   counter: false,
+   download: false,
+   closeOnTap: false,
+   getCaptionFromTitleOrAlt: false,
+ });
+
+  //END//
+
+  // лічильник//////////////////////////////////
+  const quantityInput = document.querySelector(".quantity__input");
+  const incrementButton = document.querySelector(".quantity__btn--plus");
+  const decrementButton = document.querySelector(".quantity__btn--minus");
+
+  incrementButton.addEventListener("click", () => {
+    console.log("55");
+    quantityInput.value = parseInt(quantityInput.value) + 1;
+  });
+
+  decrementButton.addEventListener("click", () => {
+    if (parseInt(quantityInput.value) > 0) {
+      quantityInput.value = parseInt(quantityInput.value) - 1;
+    }
+  });
+
+  quantityInput.addEventListener("input", () => {
+    const value = parseInt(quantityInput.value);
+    if (!isNaN(value) && value >= 0 && value <= 99) {
+      quantityInput.value = value;
+    } else {
+      quantityInput.value = 1;
+    }
+  });
+  ////////////////////////////////////////////////
+
+  //...............--->FILTERS<---...................//
   const filterBtns = document.querySelectorAll(".categories-nav__btn");
   const grid = document.querySelector(".categories-list");
 
@@ -45,7 +143,9 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+  //..................-->END<--......................//
 
+  //.................--->SLIDER(REVIEWS)<---.................//
   const swiper = new Swiper(".reviews__slider", {
     pagination: {
       el: ".reviews__dots",
@@ -58,6 +158,33 @@ document.addEventListener("DOMContentLoaded", () => {
       prevEl: ".reviews__btn--prev",
     },
   });
+  //..................-->END<---...........................//
+
+//................-->BURGER_SLIDER<--.....................//
+const burgerSwiper = new Swiper(".product-slider", {
+  navigation: {
+    nextEl: ".product-slider__btn--next",
+    prevEl: ".product-slider__btn--prev",
+  },
+});
+//...........................-->END<--...................................//
+
+  //..........................-->INTERESTING_SLIDER<--..................//
+const interestingSwiper = new Swiper(".interesting__slider", {
+  navigation: {
+    nextEl: ".interesting__btn--next",
+    prevEl: ".interesting__btn--prev",
+  },
+
+  breakpoints: {
+    1200: {
+      slidesPerView: 5,
+      spaceBetween: 30,
+    },
+  },
+});
+
+  //.........................-->END<--..............................//
 
   //burger
   window.addEventListener("resize", function () {
@@ -67,6 +194,9 @@ document.addEventListener("DOMContentLoaded", () => {
       const burger = document.querySelector(".burger");
       const closeBtn = document.querySelector(".close-btn");
       const mobileNav = document.querySelector(".mobile-nav");
+      const filterSidebar = document.querySelector(".sidebar");
+      const filterBtn = document.querySelector(".filter-btn");
+      const filterCloseBtn = document.querySelector(".sidebar__btn");
 
       burger.addEventListener("click", () => {
         body.classList.add("lock");
@@ -76,6 +206,15 @@ document.addEventListener("DOMContentLoaded", () => {
       closeBtn.addEventListener("click", () => {
         body.classList.remove("lock");
         mobileNav.classList.remove("open");
+      });
+
+      filterBtn.addEventListener("click", () => {
+        filterSidebar.classList.add("open");
+        body.classList.add("lock");
+      });
+
+      filterCloseBtn.addEventListener("click", () => {
+        filterSidebar.classList.remove("open");
       });
 
       document.addEventListener("click", function (e) {
@@ -91,21 +230,9 @@ document.addEventListener("DOMContentLoaded", () => {
           filterSidebar.classList.remove("open");
         }
       });
-
-      const filterBtn = document.querySelector(".filter-btn");
-      const filterCloseBtn = document.querySelector(".sidebar__btn");
-      const filterSidebar = document.querySelector(".sidebar");
-
-      filterBtn.addEventListener('click', () => {
-        filterSidebar.classList.add('open');
-        body.classList.add("lock");
-      });
-
-      filterCloseBtn.addEventListener("click", () => {
-        filterSidebar.classList.remove("open");
-       });
     }
   });
+  /////////////////
 
   const slider = document.querySelector(".resto__slider");
 
@@ -144,13 +271,9 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("resize", () => {
     mobilesSlider();
   });
- 
-  
-
-
 });
 
-
+//.............-->RANGE-SLIDER<---.....................//
 const rangeSlider = document.querySelector(".range__slider");
 const inputMin = document.querySelector(".range__input--min");
 const inputMax = document.querySelector(".range__input--max");
@@ -186,6 +309,8 @@ inputMin.addEventListener("change", function () {
 inputMax.addEventListener("change", function () {
   rangeSlider.noUiSlider.set([null, this.value]);
 });
+//................--->END<---...................//
+
 
  const slider2 = document.querySelector(".discount__slider");
 
@@ -222,3 +347,5 @@ inputMax.addEventListener("change", function () {
  window.addEventListener("resize", () => {
    mobilSlider();
  });
+
+ 

@@ -1,0 +1,51 @@
+.discount {
+    &__title {
+        text-align: left;
+        
+        @include r($size-sm) {
+            text-align: center;
+    }
+    }
+
+    &__list {
+        box-sizing: border-box !important;
+
+        @include r($size-sm) {
+            display: flex;
+            justify-content: initial;
+            gap: initial;
+            margin-bottom: 45px;
+        }
+
+        .content-card {
+            @include r($size-sm) {
+            margin: 0 auto;
+            }
+        }
+    }
+
+    &__slider {
+        overflow: visible;
+        @include r($size-sm) {
+            overflow: hidden;
+        }
+    }
+
+     &__dots {
+        display: none;
+    @extend .reviews__dots;
+    justify-content: center;
+    padding: 2px;
+      @include r($size-xs) {
+      display: flex;
+    }
+
+    }
+
+    &__dot {
+     @extend .reviews__dot;
+    &--active {
+       @extend .reviews__dot--active;
+        }
+    }
+}

@@ -1,6 +1,8 @@
-@include('components/_head.html')
+@include('global/_head.html', {
+    name: 'Головна сторінка'
+})
 
-    @include('components/_header.html')
+    @include('global/_header.html')
     <main class="page">
         <h1 class="sr-only">Сервіс доставки SimpleFood - номер один у місті Київ</h1>
         @include('components/_hero.html')
@@ -11,6 +13,6 @@
         @include('components/_application.html')
     </main>
 
-    @include('components/_footer.html')
+    @include('global/_footer.html')
 
-@include('components/_scripts.html')
+@include('global/_scripts.html')

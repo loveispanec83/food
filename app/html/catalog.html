@@ -1,8 +1,15 @@
-@include('components/_head.html') @include('components/_header.html')
-<main class="catalog-page">
-  @include('components/_breadcrumbs.html')
+@include('global/_head.html', {
+    name: 'Список продуктів'
+})
+    @include('global/_header.html')
 
-  <div class="container">
+    <main class="catalog-page">
+        @include('global/_breadcrumbs.html', {
+            className: 'catalog-page__breadcrumbs',
+            third: false
+         })
+
+    <div class="container">
     <div class="catalog-page__head">
       <h1 class="title catalog-page__title">Каталог продуктів</h1>
       <div class="catalog-page__actions filters-top">
@@ -41,9 +48,9 @@
         </div>
       </div>
     </div>
-  </div>
+    </div>
 
-  <div class="container">
+    <div class="container">
     <div class="catalog-page__inner mb-120">
       <section class="sidebar">
         <div class="sidebar__head">
@@ -620,12 +627,14 @@
           </li>
         </ul>
 
-        @include('components/_pagination.html')
+        @include('global/_pagination.html')
       </section>
     </div>
-  </div>
+    </div>
+    @include('components/_application.html')
+    @include('components/_discount.html')
 
-  @include('components/_application.html') @include('components/_discount.html')
-</main>
+    </main>
 
-@include('components/_footer.html') @include('components/_scripts.html')
+    @include('global/_footer.html')
+@include('global/_scripts.html')

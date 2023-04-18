@@ -1,0 +1,25 @@
+.filter-btn {
+    display: none;
+    min-width: 47px;
+    height: 47px;
+    background-color: rgba($c-orange-900, 0.1);
+    border-radius: 3px;
+
+    @include r($size-md) {
+        display: flex;
+    }
+
+    &::before {
+        min-width: 35px;
+        height: 35px;
+        background-color: $c-orange-900;
+    }
+
+    &:focus,
+    &:hover,
+    &:active {
+        &::before{
+        background-color: $c-orange-900;
+        }
+    }
+}

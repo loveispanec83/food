@@ -1,0 +1,14 @@
+.catalog {
+    &__list {
+        grid-template-columns: repeat(4, 1fr);
+        margin-bottom: size(60,30);
+
+        @include r($size-sm) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+         @include r($size-xs) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px 5px;
+        }
+    }
+}

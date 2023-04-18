@@ -1,0 +1,35 @@
+.catalog-page {
+    &__breadcrumbs {
+        margin-bottom: size(60, 40);
+    }
+
+    &__head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        grid-template: 20px;
+        margin-bottom: size(60, 30);
+	}
+
+    &__title {
+        margin-bottom: 0;
+            @include r($size-sm) {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__select-sort {
+    width: 130px;
+      
+    }
+
+    &__select-number {
+        width: 92px;
+    }
+
+    &__inner {
+        display: flex;
+        gap: 30px;
+    }
+}

@@ -1,25 +1,39 @@
-@import 'vars';
-@import 'mixins';
-@import 'colors';
-@import 'reset';
-@import 'fonts';
-@import 'global';
-@import 'media';
+@import 'base/vars';
+@import 'base/mixins';
+@import 'base/colors';
+@import 'base/reset';
+@import 'base/fonts';
+@import 'base/global';
+@import 'base/media';
 
-@import 'parts/breadcrumbs';
-@import 'parts/menu';
-@import 'parts/header';
-@import 'parts/mobile-nav';
+
+@import 'global/menu';
+@import 'global/header';
+@import 'global/mobile-nav';
 @import 'parts/hero-section';
 @import 'parts/popular-section';
 @import 'parts/categories';
-@import 'parts/product-card';
+@import 'components/product-card';
 @import 'parts/features';
 @import 'parts/resto';
-@import 'parts/content-card';
+@import 'components/breadcrumbs';
+@import 'components/content-card';
 @import 'parts/reviews';
-@import 'parts/reviews-card';
+@import 'components/reviews-card';
 @import 'parts/application';
 @import 'parts/catalog';
+@import 'parts/catalog-page';
+@import 'parts/sidebar';
+@import 'components/checkbox';
+@import 'parts/discount';
+@import 'parts/filter-btn';
+@import 'parts/filters-box';
+@import 'parts/filters-list';
+@import 'parts/filters-top';
+@import 'components/pagination';
+@import 'components/range';
+@import 'components/select';
 
-@import 'parts/footer';
+@import 'parts/product-page';
+
+@import 'global/footer';

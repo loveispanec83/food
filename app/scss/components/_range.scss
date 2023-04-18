@@ -1,0 +1,74 @@
+.range {
+
+    &__group {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 16px;
+        line-height: 1.2;
+        letter-spacing: 0.03em;
+        color: $c-gray;
+        &::after {
+            content:'₴';
+        }
+    }
+
+    &__items {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+
+    &__input {
+        width: 70px;
+        border-radius: 3px;
+        border: 1px solid $c-silver-200;
+        background-color: rgba($c-orange-900, 0.1);
+        padding: 12px;
+        text-align: center;
+    }
+
+   .noUi-target {
+    background-color: $c-orange-900;
+  
+    border-radius:0;
+    border: 0;
+    box-shadow:none;
+   } 
+
+   .noUi-horizontal {
+    width: 240px;
+    height: 2px;
+   
+        .noUi-handle{
+        width: 18px;
+        height:18px;
+        top: -8px;
+    }
+   }
+
+   .noUi-connects {
+    border-radius: 0;
+   }
+
+   .noUi-connect {
+    background-color: $c-orange-900;
+   }
+
+   .noUi-handle {
+    border-radius: 50%;
+    background-color: $c-orange-900;
+    border:none;
+    box-shadow: none;
+   
+
+    &::before {
+        content: none;
+    }
+
+    &::after {
+        content: none;
+    }
+   }
+}
